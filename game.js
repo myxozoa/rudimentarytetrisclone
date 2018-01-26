@@ -162,7 +162,7 @@ function update(time = 0) {
     if (dropCounter > dropInterval) {
         playerDrop();
     }
-
+    
     draw();
     requestAnimationFrame(update);
 }
@@ -210,7 +210,7 @@ function playerRotate(dir) {
     const pos = player.pos;
     let offset = 1;
     rotate(player.matrix, dir);
-    while (collide(arena, player.matrix)) {
+    while (collide(arena, player)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1))
         if (offset > player.matrix[0].length) {
@@ -249,18 +249,36 @@ document.addEventListener('keydown', event => {
     }
 });
 
-mc.on('swipeleft', function(ev) {
-    playerMove(-1);
-});
-mc.on('swiperight', function(ev) {
-    playerMove(1);
-});
-mc.on('swipedown', function(ev) {
-    playerDrop();
-});
-mc.on('tap', function(ev) {
-    playerRotate(1);
-});
+// mc.on('swipeleft', function(ev) {
+//     playerMove(-1);
+// });
+// mc.on('swiperight', function(ev) {
+//     playerMove(1);
+// });
+// mc.on('swipedown', function(ev) {
+//     playerDrop();
+// });
+// mc.on('tap', function(ev) {
+//     playerRotate(1);
+// });
+mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+ mc.on("swipeleft swiperight swipeup swipedown tap press", function(ev) {
+     switch(ev.type) {
+        case 'swipeleft':
+            playerMove(-1);
+            break;
+        case 'swiperight':
+            playerMove(1);
+            break;
+        case 'swipedown':
+            playerDrop();
+            break;
+        case 'tap':
+            playerRotate(1);
+     }
+ })
+
+
 
 playerReset();
 updateScore();
