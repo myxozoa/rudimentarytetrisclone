@@ -162,7 +162,7 @@ function update(time = 0) {
     if (dropCounter > dropInterval) {
         playerDrop();
     }
-    
+
     draw();
     requestAnimationFrame(update);
 }
