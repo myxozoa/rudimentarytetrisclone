@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(0deg, blue, green 40%, red);
+    background: linear-gradient(0deg, yellow, green 20%, rgb(253, 211, 218));
 
 }
 
@@ -16,7 +16,8 @@ body {
 
 #tetris {
     padding: 20px;
-    border: 1px dashed white;
+    box-shadow: 10px 10px 100px 10px black;
+    border: 1px dashed yellow;
     border-radius: 10px;
 }
 
@@ -27,7 +28,8 @@ body {
     position: absolute;
     padding-left: 200px;
     font-size: 350pt;
+    text-shadow: 5px 5px 40px red;
     font-family: Nunito;
     color: #423f3f;
-    opacity: 0.5;
+    opacity: 0.3;
 }

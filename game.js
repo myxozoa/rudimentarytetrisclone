@@ -222,16 +222,13 @@ document.addEventListener('keydown', event => {
     switch(event.keyCode) {
         case 65:
             playerMove(-1);
-            console.log('left');
             break;
 
         case 68:
             playerMove(1);
-            console.log('right');
             break;
         case 83:
             playerDrop();
-            console.log('down');
             break;
         case 87:
                 player.pos.y--;
@@ -242,6 +239,10 @@ document.addEventListener('keydown', event => {
                 break;
         case 190:
                 playerRotate(1);
+                break;
+        case 49:
+                arena = createMatrix(12, 20);
+                playerReset();
                 break;
     }
 });
