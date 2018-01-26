@@ -1,5 +1,7 @@
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
+const page = document.getElementById('page');
+const mc = new Hammer(page);
 
 context.scale(20, 20);
 function arenaSweep() {
@@ -245,6 +247,19 @@ document.addEventListener('keydown', event => {
                 playerReset();
                 break;
     }
+});
+
+mc.on('swipeleft', function(ev) {
+    playerMove(-1);
+});
+mc.on('swiperight', function(ev) {
+    playerMove(1);
+});
+mc.on('swipedown', function(ev) {
+    playerDrop();
+});
+mc.on('tap', function(ev) {
+    playerRotate(1);
 });
 
 playerReset();
