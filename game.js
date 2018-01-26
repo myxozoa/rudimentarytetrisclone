@@ -3,6 +3,7 @@ const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 function arenaSweep() {
+    let rowCount = 1;
     outer: for (let y = arena.length - 1; y > 0; --y) {
         for (let x = 0; x < arena[y].length; ++x) {
             if (arena[y][x] === 0) {
@@ -12,6 +13,9 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y++;
+
+        player.score += rowCount * 10;
+        rowCount *= 2;
     }
 }
 const matrix = [
@@ -119,6 +123,7 @@ function playerDrop() {
         merge(arena, player);
         playerReset();
         arenaSweep();
+        updateScore();
     }
     dropCounter = 0;
 }
@@ -159,11 +164,15 @@ function update(time = 0) {
     draw();
     requestAnimationFrame(update);
 }
+function updateScore() {
+    document.getElementById('score').innerText = player.score;
+}
+
 const colors = [
     null,
     '#324D5C',
     '#46B29D',
-    'F0CA4D',
+    '#F0CA4D',
     '#E37B40',
     '#F53855',
     '#46B277',
@@ -172,8 +181,9 @@ const colors = [
 const arena = createMatrix(12, 20);
 
 const player = {
-    pos: {x: 5, y: 5},
-    matrix: matrix,
+    pos: {x: 0, y:  0},
+    matrix: null,
+    score: 0,
 }
 
 function playerMove(dir) {
@@ -190,6 +200,8 @@ function playerReset() {
                     (player.matrix[0].length / 2 | 0);
     if (collide(arena, player)) {
         arena.forEach(row => row.fill(0));
+        player.score = 0;
+        updateScore();
     }
 }
 function playerRotate(dir) {
@@ -234,4 +246,6 @@ document.addEventListener('keydown', event => {
     }
 });
 
+playerReset();
+updateScore();
 update();
