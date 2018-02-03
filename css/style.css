@@ -9,6 +9,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container #score {
+  font-size: 20pt;
+  font-family: Nunito;
+  color: #1d1d1d;
+  opacity: 0.8;
+  user-select: none;
+}
 .container #page {
   height: 100%;
   width: 100%;
@@ -16,16 +23,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.container #page .score {
-  margin: 0;
-  padding: 0;
-  font-size: 50pt;
-  text-shadow: 5px 5px 40px #d8d8d8;
-  font-family: Nunito;
-  color: #7a7a7a;
-  opacity: 0.3;
-  user-select: none;
 }
 .container #page #game {
   height: 800px;

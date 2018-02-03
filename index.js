@@ -59,19 +59,19 @@ document.addEventListener('keydown', event => {
             player.move(-1, 1);
             break;
         case "A":
-            player.move(-1, 4);
+            player.move(-1, 5);
             break;
         case "d":
             player.move(1, 1);
             break;
         case "D":
-            player.move(1, 4);
+            player.move(1, 5);
             break;
         case "s":
             player.drop(1);
             break;
         case "S":
-            player.drop(12);
+            player.drop(15);
             break;
         case " ":
                 player.pos.y--;
