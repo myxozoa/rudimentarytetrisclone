@@ -2,8 +2,6 @@ body {
     background: rgb(238, 238, 238);
 }
 
-@phone: ~"(max-width: 750px)";
-
 .container {
     height: 100%;
     width: 100%;
@@ -11,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     #score {
         font-size: 20pt;
         font-family: Nunito;
@@ -29,13 +27,35 @@ body {
         align-items: center;
 
         #game {
-            height: 800px;
-            width: 500px;
+            height: auto;
+            width: 450px;
+            // min-width: 500px;
             padding: 20px;
             box-shadow: 10px 10px 100px 10px rgb(175, 175, 175);
             border: 1px dashed rgb(0, 0, 0);
             border-radius: 10px;
+        }
 
+        .keyboard-info {
+            width: 15%;
+            height: auto;
+            color: #1d1d1d;
+            margin: 3%;
+
+            @media (max-width: 850px) {
+                font-size: 1.5vw;
+            }
+        }
+        .touch-info {
+            order: -1;
+            width: 15%;
+            height: auto;
+            color: #1d1d1d;
+            margin: 3%;
+
+            @media (max-width: 850px) {
+                font-size: 1.5vw;
+            }
         }
     }
 

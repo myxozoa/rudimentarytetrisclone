@@ -75,7 +75,7 @@ document.addEventListener('keydown', event => {
             break;
         case " ":
                 player.pos.y--;
-                alert('CHEATER');
+                alert('PAUSE');
                 break;
         case ",":
                 player.rotate(-1);
