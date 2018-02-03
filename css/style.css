@@ -1,1 +1,37 @@
-body{background:#eee}.page{height:97vh;width:99vw;display:flex;flex-direction:row;justify-content:center;align-items:center;border:3px dashed white;border-radius:10px}#tetris{height:800px;width:27%;padding:20px;box-shadow:10px 10px 100px 10px #afafaf;border:1px dashed #000;border-radius:10px}#score{margin:0;padding:0;left:1%;position:absolute;padding-top:100px;padding-left:10%;font-size:100pt;text-shadow:5px 5px 40px #d8d8d8;font-family:Nunito;color:#7a7a7a;opacity:.3;user-select:none}
+body {
+  background: #eeeeee;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container #page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container #page .score {
+  margin: 0;
+  padding: 0;
+  font-size: 50pt;
+  text-shadow: 5px 5px 40px #d8d8d8;
+  font-family: Nunito;
+  color: #7a7a7a;
+  opacity: 0.3;
+  user-select: none;
+}
+.container #page #game {
+  height: 800px;
+  width: 500px;
+  padding: 20px;
+  box-shadow: 10px 10px 100px 10px #afafaf;
+  border: 1px dashed #000000;
+  border-radius: 10px;
+}

@@ -47,14 +47,16 @@ class Player {
                     }
     }
 
-    drop() {
-        this.pos.y++;
-        if (board.collide(board.playMatrix, this)) {
-            this.pos.y--;
-            board.merge(board.playMatrix, this);
-            this.reset();
-            board.sweep();
-            game.updateScore();
+    drop(times) {
+        for (let i = 0; i < times; i++) {
+            this.pos.y++;
+            if (board.collide(board.playMatrix, this)) {
+                this.pos.y--;
+                board.merge(board.playMatrix, this);
+                this.reset();
+                board.sweep();
+                game.updateScore();
+            }
         }
         dropCounter = 0;
     }
@@ -89,10 +91,12 @@ class Player {
         }
     }
 
-    move(dir) {
-        this.pos.x += dir;
-        if (board.collide(board.playMatrix, this)) {
-            this.pos.x -= dir;
+    move(dir, times) {
+        for (let i = 0; i < times; i++) {
+            this.pos.x += dir;
+            if (board.collide(board.playMatrix, this)) {
+                this.pos.x -= dir;
+            }
         }
     }
 

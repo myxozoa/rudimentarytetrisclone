@@ -1,4 +1,4 @@
-const canvas = document.getElementById('tetris');
+const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 const page = document.getElementById('page');
 const swyper = new Hammer(page);
@@ -46,7 +46,7 @@ function update(time = 0) {
 
     dropCounter += deltaTime;
     if (dropCounter > dropInterval) {
-        player.drop();
+        player.drop(1);
     }
 
     game.draw();
@@ -54,28 +54,36 @@ function update(time = 0) {
 }
 
 document.addEventListener('keydown', event => {
-    switch(event.keyCode) {
-        case 65:
-            player.move(-1);
+    switch(event.key) {
+        case "a":
+            player.move(-1, 1);
             break;
-
-        case 68:
-            player.move(1);
+        case "A":
+            player.move(-1, 4);
             break;
-        case 83:
-            player.drop();
+        case "d":
+            player.move(1, 1);
             break;
-        case 87:
+        case "D":
+            player.move(1, 4);
+            break;
+        case "s":
+            player.drop(1);
+            break;
+        case "S":
+            player.drop(12);
+            break;
+        case " ":
                 player.pos.y--;
                 alert('CHEATER');
                 break;
-        case 188:
+        case ",":
                 player.rotate(-1);
                 break;
-        case 190:
+        case ".":
                 player.rotate(1);
                 break;
-        case 49:
+        case "Backspace":
                 board.createMatrix(12, 20);
                 player.reset();
                 break;
@@ -86,13 +94,13 @@ swyper.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
  swyper.on("swipeleft swiperight swipeup swipedown tap press", function(ev) {
      switch(ev.type) {
         case 'swipeleft':
-            player.move(-1);
+            player.move(-1, 1);
             break;
         case 'swiperight':
-            player.move(1);
+            player.move(1, 1);
             break;
         case 'swipedown':
-            player.drop();
+            player.drop(1);
             break;
         case 'tap':
             player.rotate(1);
