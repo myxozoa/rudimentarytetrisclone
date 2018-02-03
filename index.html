@@ -2,15 +2,34 @@
 <html>
     <head>
         <title>Js-tris</title>
-        <script defer='defer' src='game.js'></script>
+        <script defer='defer' src=board.js></script>
+        <script defer='defer' src=player.js></script>
+        <script defer='defer' src=game.js></script>
+        <script defer='defer' src=index.js></script>
+
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-        <link rel='stylesheet' type='text/css' href='style.css'></link>
+        <link rel='stylesheet' type='text/css' href='./css/style.css'></link>
     </head>
     <body>
-        <h2 id='score'></h2>
-        <div class='page' id='page'>
-        <canvas id='tetris' width='240' height='400'></canvas>
+        <div class='container'>
+            <h2 id='score'></h2>
+            <div id='page'>
+            <canvas id='game' width='240' height='400'></canvas>
+            <h4 class='keyboard-info'>
+                Keyboard Controls: <br>
+                <br>
+                - WASD to move, +Shift to jump <br>
+                - [ , ] and [ . ] to rotate <br>
+                - Spacebar to pause <br>
+            </h4>
+            <h4 class='touch-info'>
+                Touch Controls: <br>
+                <br>
+                - Swipe to move <br>
+                - Tap to rotate <br>
+            </h4>
+            </div>
         </div>
     </body>
 </html>

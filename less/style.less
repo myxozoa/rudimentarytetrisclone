@@ -1,0 +1,63 @@
+body {
+    background: rgb(238, 238, 238);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #score {
+        font-size: 20pt;
+        font-family: Nunito;
+        color: #1d1d1d;
+        opacity: 0.8;
+        user-select: none;
+    }
+
+    #page {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        #game {
+            height: auto;
+            width: 450px;
+            // min-width: 500px;
+            padding: 20px;
+            box-shadow: 10px 10px 100px 10px rgb(175, 175, 175);
+            border: 1px dashed rgb(0, 0, 0);
+            border-radius: 10px;
+        }
+
+        .keyboard-info {
+            width: 15%;
+            height: auto;
+            color: #1d1d1d;
+            margin: 3%;
+
+            @media (max-width: 850px) {
+                font-size: 1.5vw;
+            }
+        }
+        .touch-info {
+            order: -1;
+            width: 15%;
+            height: auto;
+            color: #1d1d1d;
+            margin: 3%;
+
+            @media (max-width: 850px) {
+                font-size: 1.5vw;
+            }
+        }
+    }
+
+}
+
