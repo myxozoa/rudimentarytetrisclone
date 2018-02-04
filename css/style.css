@@ -2,21 +2,20 @@ body {
   background: #eeeeee;
   font-family: Nunito;
 }
-.container {
-  height: 100%;
+#container {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container #score {
+#container #score {
   font-size: 20pt;
   color: #1d1d1d;
   opacity: 0.8;
   user-select: none;
 }
-.container #page {
+#container #page {
   height: 100%;
   width: 100%;
   display: flex;
@@ -24,7 +23,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container #page #game {
+#container #page #game {
   height: auto;
   width: 450px;
   padding: 20px;
@@ -32,7 +31,12 @@ body {
   border: 1px dashed #000000;
   border-radius: 10px;
 }
-.container #page #keyboard-info {
+@media (max-width: 756px) {
+  #container #page #game {
+    width: 80%;
+  }
+}
+#container #page #keyboard-info {
   width: 15%;
   height: auto;
   color: #1d1d1d;
@@ -40,11 +44,11 @@ body {
   margin: 3%;
 }
 @media (max-width: 850px) {
-  .container #page #keyboard-info {
+  #container #page #keyboard-info {
     font-size: 1.5vw;
   }
 }
-.container #page #touch-info {
+#container #page #touch-info {
   order: -1;
   width: 15%;
   height: auto;
@@ -53,12 +57,13 @@ body {
   margin: 3%;
 }
 @media (max-width: 850px) {
-  .container #page #touch-info {
+  #container #page #touch-info {
     font-size: 1.5vw;
   }
 }
-.container #pause-button {
+#container #pause-button {
   margin: 10px;
+  z-index: 50;
 }
 .pause-modal {
   display: flex;

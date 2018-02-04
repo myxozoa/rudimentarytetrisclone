@@ -1,3 +1,6 @@
+const page = document.getElementById('page');
+const swyper = new Hammer(page);
+
 class Player {
     constructor() {
         this.pos = {x: 0,
@@ -138,14 +141,6 @@ document.addEventListener('keydown', event => {
             break;
         case "S":
             player.drop(15);
-            break;
-        case " ":
-            game.togglePause();
-            update();
-            break;
-        case "Enter":
-            game.togglePause();
-            update();
             break;
         case ",":
             player.rotate(-1);
