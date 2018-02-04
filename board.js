@@ -29,13 +29,13 @@ class Board {
     }
 
     collide(playMatrix, player) {
-        const m = player.currentPiece;
-        const o = player.pos;
-        for (let y = 0; y < m.length; ++y) {
-            for (let x = 0; x < m[y].length; ++x) {
-                if (m[y][x] !== 0 &&
-                    (playMatrix[y + o.y] &&
-                        playMatrix[y + o.y][x + o.x]) !== 0) {
+        const piece = player.currentPiece;
+        const position = player.pos;
+        for (let y = 0; y < piece.length; ++y) {
+            for (let x = 0; x < piece[y].length; ++x) {
+                if (piece[y][x] !== 0 &&
+                    (playMatrix[y + position.y] &&
+                    playMatrix[y + position.y][x + position.x]) !== 0) {
                     return true;
                 }
             }
