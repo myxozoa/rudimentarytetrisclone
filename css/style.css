@@ -3,7 +3,6 @@ body {
   font-family: Nunito;
 }
 #container {
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,6 +30,11 @@ body {
   box-shadow: 10px 10px 100px 10px #afafaf;
   border: 1px dashed #000000;
   border-radius: 10px;
+}
+@media (max-width: 756px) {
+  #container #page #game {
+    width: 80%;
+  }
 }
 #container #page #keyboard-info {
   width: 15%;

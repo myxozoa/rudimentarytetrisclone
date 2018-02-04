@@ -1,5 +1,5 @@
-const container = document.getElementById('container');
-const swyper = new Hammer(container);
+const page = document.getElementById('page');
+const swyper = new Hammer(page);
 
 class Player {
     constructor() {
