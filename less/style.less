@@ -1,6 +1,7 @@
 body {
     background: #eeeeee;
     font-family: Nunito;
+    font-size: 62.5%;
 }
 
 #container {
@@ -9,9 +10,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.1rem;
 
     #score {
-        font-size: 20pt;
         color: #1d1d1d;
         opacity: 0.8;
         user-select: none;
@@ -30,7 +31,7 @@ body {
             width: 450px;
             padding: 20px;
             box-shadow: 10px 10px 100px 10px rgb(175, 175, 175);
-            border: 1px dashed rgb(0, 0, 0);
+            border: 2px double rgb(0, 0, 0);
             border-radius: 10px;
 
             @media (max-width: 756px) {
@@ -85,10 +86,11 @@ body {
     transform: translate(-50%, -50%);
     background: #e4e4e4;
     box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8);
-    border-radius: 30px;
+    border-radius: 20px;
 
     .pause-modal-title {
         margin: 5px;
+        font-size: 1.3rem;
         overflow: auto;
     }
     #play-button {
@@ -117,7 +119,9 @@ body {
     height: 40px;
     padding: 5px;
     background: white;
-    border: 1px double black;
+    border: 2px double black;
+    font-size: 0.9rem;
+    border-radius: 5px;
 
     &:active {
         background: black;
