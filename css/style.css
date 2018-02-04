@@ -8,10 +8,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Nunito;
 }
 .container #score {
   font-size: 20pt;
-  font-family: Nunito;
   color: #1d1d1d;
   opacity: 0.8;
   user-select: none;
