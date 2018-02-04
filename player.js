@@ -53,7 +53,7 @@ class Player {
             if (board.collide(board.playMatrix, this)) {
                 this.pos.y--;
                 board.merge(board.playMatrix, this);
-                this.reset();
+                this.newPiece();
                 board.sweep();
                 game.updateScore();
             }
@@ -100,7 +100,7 @@ class Player {
         }
     }
 
-    reset() {
+    newPiece() {
         const pieces = 'ILJOTSZ';
         this.currentPiece = this.createPiece(pieces[pieces.length * Math.random() | 0]);    // after placing a piece a new one is chosen at random
         this.pos.y = 0;
@@ -110,7 +110,69 @@ class Player {
             board.playMatrix.forEach(row => row.fill(0));
             this.score = 0;
             dropInterval = 500;
-            game.updateScore();
+            this.updateScore();
         }
     }
+
+    updateScore() {
+        document.getElementById('score').innerText = player.score;
+    }
 }
+
+document.addEventListener('keydown', event => {
+    switch(event.key) {
+        case "a":
+            player.move(-1, 1);
+            break;
+        case "A":
+            player.move(-1, 5);
+            break;
+        case "d":
+            player.move(1, 1);
+            break;
+        case "D":
+            player.move(1, 5);
+            break;
+        case "s":
+            player.drop(1);
+            break;
+        case "S":
+            player.drop(15);
+            break;
+        case " ":
+            game.togglePause();
+            update();
+            break;
+        case "Enter":
+            game.togglePause();
+            update();
+            break;
+        case ",":
+            player.rotate(-1);
+            break;
+        case ".":
+            player.rotate(1);
+            break;
+        case "Backspace":
+            board.createMatrix(12, 20);
+            player.reset();
+            break;
+    }
+});
+
+swyper.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+ swyper.on("swipeleft swiperight swipeup swipedown tap press", function(ev) {
+     switch(ev.type) {
+        case 'swipeleft':
+            player.move(-1, 1);
+            break;
+        case 'swiperight':
+            player.move(1, 1);
+            break;
+        case 'swipedown':
+            player.drop(1);
+            break;
+        case 'tap':
+            player.rotate(1);
+     }
+ });
