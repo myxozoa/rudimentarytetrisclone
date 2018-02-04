@@ -25,10 +25,18 @@ let lastTime = 0;
 let dropCounter = 0;
 let dropInterval = 500;
 let scoreMult = 1;
-let paused = true;
+// let paused = true;
 
-const decrem = setInterval(decreaseInterval, 4000);
-const levelUp = setInterval(scoreMultIncrease, 20000);
+const decrem = setInterval(function() {
+    if(!paused) {
+        decreaseInterval();
+    }
+}, 4000);
+const levelUp = setInterval(function() {
+    if(!paused) {
+        scoreMultIncrease();
+    }
+}, 20000);
 
 function update(time = 0) {
     const deltaTime = time - lastTime;

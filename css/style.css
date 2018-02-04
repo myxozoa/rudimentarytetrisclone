@@ -1,5 +1,6 @@
 body {
   background: #eeeeee;
+  font-family: Nunito;
 }
 .container {
   height: 100%;
@@ -8,7 +9,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Nunito;
 }
 .container #score {
   font-size: 20pt;
@@ -32,26 +32,82 @@ body {
   border: 1px dashed #000000;
   border-radius: 10px;
 }
-.container #page .keyboard-info {
+.container #page #keyboard-info {
   width: 15%;
   height: auto;
   color: #1d1d1d;
+  user-select: none;
   margin: 3%;
 }
 @media (max-width: 850px) {
-  .container #page .keyboard-info {
+  .container #page #keyboard-info {
     font-size: 1.5vw;
   }
 }
-.container #page .touch-info {
+.container #page #touch-info {
   order: -1;
   width: 15%;
   height: auto;
   color: #1d1d1d;
+  user-select: none;
   margin: 3%;
 }
 @media (max-width: 850px) {
-  .container #page .touch-info {
+  .container #page #touch-info {
     font-size: 1.5vw;
   }
+}
+.container #pause-button {
+  margin: 10px;
+}
+.pause-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 400px;
+  max-width: 100%;
+  height: 200px;
+  max-height: 100%;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e4e4e4;
+  box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+}
+.pause-modal .pause-modal-title {
+  margin: 5px;
+  overflow: auto;
+}
+.pause-modal #play-button {
+  margin: 10px;
+  z-index: 1;
+  padding: 10px;
+}
+.closed {
+  display: none;
+}
+.pause-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.5);
+}
+.button {
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  background: white;
+  border: 1px double black;
+}
+.button:active {
+  background: black;
+  color: white;
+  border: 1px double white;
 }
