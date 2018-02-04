@@ -1,7 +1,8 @@
 body {
   background: #eeeeee;
-  font-family: Nunito;
+  font-family: Lato;
   font-size: 62.5%;
+  letter-spacing: 2px;
 }
 #container {
   width: 100%;
@@ -113,6 +114,7 @@ body {
   background: white;
   border: 2px double black;
   font-size: 0.9rem;
+  text-align: center;
   border-radius: 5px;
 }
 .button:active {
