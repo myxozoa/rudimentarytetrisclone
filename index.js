@@ -1,7 +1,6 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
-const page = document.getElementById('page');
-const swyper = new Hammer(page);
+
 
 context.scale(20, 20);
 
@@ -28,12 +27,12 @@ let scoreMult = 1;
 // let paused = true;
 
 const decrem = setInterval(function() {
-    if(!paused) {
+    if(!game.paused) {
         decreaseInterval();
     }
 }, 4000);
 const levelUp = setInterval(function() {
-    if(!paused) {
+    if(!game.paused) {
         scoreMultIncrease();
     }
 }, 20000);
