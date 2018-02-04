@@ -9,7 +9,7 @@ const board = new Board();
 const game = new Game();
 
 function decreaseInterval() {
-    dropInterval -= 10;
+    dropInterval -= 6;
     console.log('dropping');
 }
 
