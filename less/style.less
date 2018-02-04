@@ -4,6 +4,9 @@ body {
     font-size: 62.5%;
     letter-spacing: 2px;
 }
+@phone: ~"(min-width: 500px)";
+@tablet: ~"(min-width: 800px)";
+@laptop: ~"(min-width: 1100px)";
 
 #container {
     width: 100%;
@@ -13,6 +16,7 @@ body {
     align-items: center;
     font-size: 1.1rem;
 
+
     #score {
         color: #1d1d1d;
         opacity: 0.8;
@@ -20,7 +24,6 @@ body {
     }
 
     #page {
-        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -29,14 +32,23 @@ body {
 
         #game {
             height: auto;
-            width: 450px;
+            width: 900px;
             padding: 20px;
             box-shadow: 10px 10px 100px 10px rgb(175, 175, 175);
-            border: 2px double rgb(0, 0, 0);
+            border: 2px double black;
             border-radius: 10px;
 
-            @media (max-width: 756px) {
+            @media @phone {
+                height: auto;
                 width: 80%;
+            }
+            @media @tablet {
+                height: auto;
+                width: 60%;
+            }
+            @media @laptop {
+                height: auto;
+                width: 20%;
             }
         }
 
