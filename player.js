@@ -58,7 +58,7 @@ class Player {
                 board.merge(board.playMatrix, this);
                 this.newPiece();
                 board.sweep();
-                game.updateScore();
+                this.updateScore();
             }
         }
         dropCounter = 0;
